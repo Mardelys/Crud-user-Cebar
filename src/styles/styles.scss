@@ -1,108 +1,107 @@
-$accent: #59919b;
-$bg_card: #e1ecee;
+$accent:  #0ea500;
+$bg_card: #f0f0f0;
+$letter:#ffffff;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-input::-webkit-inner-spin-button {
-    appearance: none;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Roboto", sans-serif;
 }
 
 header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    height: 100px;
-    background-color: $accent;
-    color: white;
-    font-weight: bold;
-    font-size: 2rem;
-    text-align: center;
-    line-height: 100px;
+   position: sticky;
+   top: 0;
+   left: 0;
+   height: 100px;
+   background-color: $accent;
+   color: $letter;
+   font-weight: bold;
+   text-align: center;
+   line-height: 100px;
 }
 
 main {
-    padding: 60px 0;
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    justify-content: space-evenly;
+   padding: 60px 0;
+   width: 90%;
+   display: flex;
+   margin: auto;
+   flex-direction: column;
+   gap: 50px;
+   justify-content: space-evenly;
 
-    h1 {
-        text-align: center;
-    }
+   h1 {
+      text-align: center;
+   }
 }
 
-.add {
-    display: grid;
-    grid: 40px / repeat(5, 1fr);
-    gap: 10px;
+form {
+   text-align: center;
+   margin: 2%;
+   background-color: #e6e6e6;
+   padding: 5px;
+   border-radius: 10px;
+   box-shadow: #0520028e 1px 1px 5px ;
 
-    input,
-    button {
-        border-radius: 10px;
-        font-size: 1.2rem;
-    }
-
-    input {
-        width: 100%;
-        padding-left: 10px;
-    }
-
-    button {
-        background-color: $accent;
-        color: white;
-        cursor: pointer;
-    }
+   input {
+      margin: 1%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+   
+   
+   }
+   button{
+      width: 10%;
+      padding: 10px;
+      border: none;
+      background-color: $accent;
+      color: $letter;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+   }
 }
-.modal{
+.modal {
    position: fixed;
    top: 0;
-   left:0;
-   right:0;
+   left: 0;
+   right: 0;
    bottom: 0;
    background-color: #111111bd;
    display: flex;
 
-
-   .modal_container{
+   .modal_container {
       margin: auto;
       width: 50%;
       height: 300px;
-      background-color: rgb(235, 232, 232);
+      background-color: #ffffff;
       border-radius: 10px;
-      
    }
 
-   form{
+   form {
+      text-align: center;
       width: 80%;
-     margin:5%  auto;
+      margin: 5% auto;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       list-style: none;
-      
-     
-      input{
+
+      input {
          height: 40px;
          margin: 10px;
-         border:none;
+         border: none;
          width: 90%;
          border-radius: 5px;
          padding: 5px;
       }
-      a{
+      a {
          width: 100%;
          text-align: center;
 
-         button{
+         button {
             width: 60%;
             border: none;
             font-size: 30px;
@@ -114,104 +113,104 @@ main {
             cursor: pointer;
          }
       }
-
    }
-
 }
 
 .card {
-    display: grid;
-    /* grid-template-rows: min-content 60px;
+   display: grid;
+   /* grid-template-rows: min-content 60px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr )); */
-    grid: min-content 60px / repeat(7, 1fr);
-    place-items: center;
+   grid: min-content 60px / repeat(5, 1fr);
+   margin: 0 50px;
+   place-items: center;
 
-    span {
-        font-weight: bold;
-        font-size: 1.2rem;
-        background-color: $accent;
-        justify-self: stretch;
-        color: white;
-        text-align: center;
-    }
+   span {
+      font-weight: bold;
+      font-size: 1.2rem;
+      background-color: $accent;
+      justify-self: stretch;
+      color: $letter;
+      padding: 10px;
+      text-align: center;
+   }
 
-    &:not(:first-of-type) span {
-        display: none;
-    }
+   &:not(:first-of-type) span {
+      display: none;
+   }
 
-    p {
-        text-align: center;
-        grid-row: 2 / 3;
-        padding-right: 5px;
-    }
+   p {
+      text-align: center;
+      grid-row: 2 / 3;
+      padding-right: 5px;
+   }
 
-    .edit {
-        padding: 5px 10px;
-        outline: #081528 1px solid;
-        border-radius: 5px;
-    }
+   .btns {
+      display: grid;
+      grid: 1fr / 1fr 1fr;
+      place-items: center;
+      gap: 20px;
+      grid-row: 2 / 3;
 
-    .btns {
-        display: grid;
-        grid: 1fr / 1fr 1fr;
-        place-items: center;
-        gap: 20px;
-        grid-row: 2 / 3;
+      svg {
+         background: #e4e4e4;
+         border-radius: 10px;
+         padding: 5px 10px;
+         box-sizing: content-box;
+         cursor: pointer;
+         color: $accent;
+         
+         &:nth-child(2){
+            color: rgb(139, 0, 0);
+         }
+         
+         &:hover{
+            background-color: $accent ;
+            color: $letter;
+         }
+      }
+   }
 
-        svg {
-            background: $accent;
-            color: white;
-            border-radius: 10px;
-            padding: 5px 10px;
-            box-sizing: content-box;
-            cursor: pointer;
-        }
-    }
-
-    &:nth-child(2n) {
-        background-color: $bg_card;
-    }
+   &:nth-child(2n) {
+      background-color: $bg_card;
+   }
 }
 
 // Media Querys
 
 //Tablet & Mobile
 @media (max-width: 1000px) {
-    .add {
-        grid: repeat(7, 40px) / 1fr;
-    }
+   .add {
+      grid: repeat(7, 40px) / 1fr;
+   }
+   .table {
+      display: grid;
+      grid-template-columns: repeat(2 1fr);
+      gap: 50px;
+   }
 
-   
-    .table {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 50px;
-    }
-
-    .card {
-        background-color: $bg_card;
-        grid: repeat(7, min-content 60px) / 1fr;
-
-        &:not(:first-of-type) span {
+   .card {
+      background-color: $bg_card;
+      grid: repeat(7, min-content 60px) / 1fr;
+      &:not(:first-of-type) span {
          display: inline;
-     }
+      }
 
-        p,
-        .btns {
-            grid-row: auto;
-        }
-        span{
-         background: #fff;
-         color: #59919b;
-       }
-    }
+      p,
+      .btns {
+         grid-row: auto;
+      }
+      span {
+         background: $accent;
+         color: $letter;
+      }
+   }
 }
 
 //Tablet
 @media (min-width: 480px) and (max-width: 1000px) {
-    .add {
-        grid: repeat(7, 40px) / 1fr;
-        width: 60%;
-        margin: auto;
-    }
+   .add {
+      grid: repeat(7, 40px) / 1fr;
+      width: 60%;
+      margin: auto;
+   }
 }

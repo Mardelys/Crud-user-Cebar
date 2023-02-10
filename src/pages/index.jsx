@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { User } from "../components/User";
 import { AddUser } from "../components/AddUser";
+import { connect } from "mongoose";
+
 
 
 export default function Home() {

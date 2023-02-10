@@ -35,7 +35,7 @@ export const User = ({ name, username, email, phone, website, id, onEdit, onDele
             <section className="modal">
                <div className="modal_container">
                   <form onSubmit={handleOnEditSubmit}>
-                    
+
                      <li>
                         <label htmlFor="name">Nombre</label>
                         <input placeholder="Nombre Completo" name="name" defaultValue={name} />
@@ -45,15 +45,18 @@ export const User = ({ name, username, email, phone, website, id, onEdit, onDele
                         <input placeholder="Usuario" name="username" defaultValue={username} />
                      </li>
                      <li>
-                     <label htmlFor="email">Correo</label>
-                     <input placeholder="Email" name="email" defaultValue={email} /></li>
+                        <label htmlFor="email">Correo</label>
+                        <input placeholder="Email" name="email" defaultValue={email} />
+                     </li>
                      <li>
-                     <label htmlFor="phone">Teléfono</label>
-                     <input placeholder="Teléfono" name="phone" defaultValue={phone} /></li>
+                        <label htmlFor="phone">Teléfono</label>
+                        <input placeholder="Teléfono" name="phone" defaultValue={phone} />
+                     </li>
                      <li>
-                     <label htmlFor="website">Sitio Web</label>
-                     <input placeholder="Sitio web" name="website" defaultValue={website} /></li>
-                     
+                        <label htmlFor="website">Sitio Web</label>
+                        <input placeholder="Sitio web" name="website" defaultValue={website} />
+                     </li>
+
                      <a href="#" className="modal_close"><button onSubmit={handleOnEditSubmit}><MdOutlineCheckCircleOutline /></button></a>
                   </form>
                </div>
@@ -62,7 +65,7 @@ export const User = ({ name, username, email, phone, website, id, onEdit, onDele
             <div className="card">
                <span>Nombre Completo</span>
                <p>{name}</p>
-               <span>Nombre de Usuario</span>
+               <span> Usuario</span>
                <p>{username}</p>
                <span >Correo Electrónico</span>
                <p>{email}</p>
@@ -70,6 +73,7 @@ export const User = ({ name, username, email, phone, website, id, onEdit, onDele
                <p>{phone}</p>
                <span className="user-website">Sitio web</span>
                <p>{website}</p>
+               <span>Acciones</span>
                <div className="btns">
                   <MdMode size={30} onClick={handleEdit} />
                   <MdOutlineDelete size={30} onClick={handleDelete} />
