@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdMode, MdOutlineDelete, MdOutlineCheckCircleOutline } from 'react-icons/md'
 
 export const User = ({ name,username, email, phone,website, id, onEdit, onDelete }) => {
   const [isEdit, setIsEdit] = useState(false);
@@ -9,6 +10,10 @@ export const User = ({ name,username, email, phone,website, id, onEdit, onDelete
 
   const handleDelete = () => {
     onDelete(id);
+    return(
+      <div></div>
+    )
+
   };
 
   const handleOnEditSubmit = (evt) => {
@@ -18,8 +23,11 @@ export const User = ({ name,username, email, phone,website, id, onEdit, onDelete
   };
 
   return (
-    <div>
+    <>
       {isEdit ? (
+
+         <section className="modal">
+            <div className="modal_container">
         <form onSubmit={handleOnEditSubmit}>
           
           <input placeholder="Nombre Completo" name="name" defaultValue={name}/>
@@ -28,22 +36,29 @@ export const User = ({ name,username, email, phone,website, id, onEdit, onDelete
       
       <input placeholder="Teléfono" name="phone" defaultValue={phone}/>
       <input placeholder="Sitio web" name="website" defaultValue={website}/>
-      
-          <button onSubmit={handleOnEditSubmit}>Save</button>
+         <div></div>
+          <a href="#" className="modal_close"><button  onSubmit={handleOnEditSubmit}><MdOutlineCheckCircleOutline/></button></a>
         </form>
+        </div>
+        </section>
       ) : (
-        <div className="user">
-          <span className="user-name">{name}</span>
-          <span className="user-username">{username}</span>
-          <span className="user-email">{email}</span>
-          <span className="user-phone">{phone}</span>
-          <span className="user-website">{website}</span>
-          <div>
-            <button onClick={handleEdit}>Edit</button>
-            <button onClick={handleDelete}>Delete</button>
+        <div className="card">
+          <span>Nombre Completo</span>
+          <p>{name}</p>
+          <span>Nombre de Usuario</span>
+          <p>{username}</p>
+          <span >Correo Electrónico</span>
+          <p>{email}</p>
+          <span > Número de Teléfono</span>
+          <p>{phone}</p>
+          <span className="user-website">Sitio web</span>
+          <p>{website}</p>
+          <div className="btns">
+            <MdMode size={30} onClick={handleEdit} /> 
+            <MdOutlineDelete size={30} onClick={handleDelete} />
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
