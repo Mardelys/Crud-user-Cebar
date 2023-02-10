@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { getData } from '../utils/tools'
 import { useState } from 'react'
-import Card from '../components/Card'
-import Form from '../components/Form'
+import Card from '../components/User'
+import Form from '../components/AddUser'
 
 export default function Home({listUser}) {
    const [userState, setUserState]=
