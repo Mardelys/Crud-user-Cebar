@@ -1,0 +1,162 @@
+$accent: #59919b;
+$bg_card: #e1ecee;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100px;
+    background-color: $accent;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 100px;
+}
+
+main {
+    padding: 60px 0;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: space-evenly;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+.add {
+    display: grid;
+    grid: 40px / repeat(7, 1fr);
+    gap: 10px;
+
+    input,
+    button {
+        border-radius: 10px;
+        font-size: 1.2rem;
+    }
+
+    input {
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    button {
+        background-color: $accent;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.card {
+    display: grid;
+    /* grid-template-rows: min-content 60px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr )); */
+    grid: min-content 60px / repeat(7, 1fr);
+    place-items: center;
+
+    span {
+        font-weight: bold;
+        font-size: 1.2rem;
+        background-color: $accent;
+        justify-self: stretch;
+        color: white;
+        text-align: center;
+    }
+
+    &:not(:first-of-type) span {
+        display: none;
+    }
+
+    p {
+        text-align: center;
+        grid-row: 2 / 3;
+        padding-right: 5px;
+    }
+
+    .edit {
+        padding: 5px 10px;
+        outline: #081528 1px solid;
+        border-radius: 5px;
+    }
+
+    .btns {
+        display: grid;
+        grid: 1fr / 1fr 1fr;
+        place-items: center;
+        gap: 20px;
+        grid-row: 2 / 3;
+
+        svg {
+            background: $accent;
+            color: white;
+            border-radius: 10px;
+            padding: 5px 10px;
+            box-sizing: content-box;
+            cursor: pointer;
+        }
+    }
+
+    &:nth-child(2n) {
+        background-color: $bg_card;
+    }
+}
+
+// Media Querys
+
+//Tablet & Mobile
+@media (max-width: 1000px) {
+    .add {
+        grid: repeat(7, 40px) / 1fr;
+    }
+
+   
+    .table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+    }
+
+    .card {
+        background-color: $bg_card;
+        grid: repeat(7, min-content 60px) / 1fr;
+
+        &:not(:first-of-type) span {
+         display: inline;
+     }
+
+        p,
+        .btns {
+            grid-row: auto;
+        }
+        span{
+         background: #fff;
+         color: #59919b;
+       }
+    }
+}
+
+//Tablet
+@media (min-width: 480px) and (max-width: 1000px) {
+    .add {
+        grid: repeat(7, 40px) / 1fr;
+        width: 60%;
+        margin: auto;
+    }
+}

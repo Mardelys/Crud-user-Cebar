@@ -15,10 +15,6 @@ const userSchema = Schema(
          required: true,
       },
       address: {
-         street:{
-            type: String,
-            required: true,
-         },
          city: {
             type: String,
             required: true,
@@ -36,16 +32,10 @@ const userSchema = Schema(
          name: {
             type: String,
             required: true,
-         },
-         bs: {
-            type: String,
-            required: true,
          }
       }
    },
-   {
-      versionKey: false
-   }
+   
 );
 
 
