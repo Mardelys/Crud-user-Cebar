@@ -43,7 +43,7 @@ main {
 
 .add {
     display: grid;
-    grid: 40px / repeat(7, 1fr);
+    grid: 40px / repeat(5, 1fr);
     gap: 10px;
 
     input,
@@ -77,16 +77,44 @@ main {
       margin: auto;
       width: 50%;
       height: 300px;
-      background-color: #fff;
+      background-color: rgb(235, 232, 232);
       border-radius: 10px;
       
    }
 
    form{
       width: 80%;
-     margin: 5%;
+     margin:5%  auto;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      list-style: none;
+      
+     
+      input{
+         height: 40px;
+         margin: 10px;
+         border:none;
+         width: 90%;
+         border-radius: 5px;
+         padding: 5px;
+      }
+      a{
+         width: 100%;
+         text-align: center;
+
+         button{
+            width: 60%;
+            border: none;
+            font-size: 30px;
+            background: $accent;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 10px;
+            box-sizing: content-box;
+            cursor: pointer;
+         }
+      }
+
    }
 
 }

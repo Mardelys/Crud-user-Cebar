@@ -103,8 +103,12 @@ export default function Home() {
    };
 
    return (
+      <>
+      <header>
+         <h1>Usuarios Cebar SAS</h1>
+      </header>
       <div className="App">
-         <h1>Users</h1>
+         
          <AddUser onAdd={onAdd} />
          {users.map((user) => (
             <User
@@ -119,6 +123,6 @@ export default function Home() {
                onDelete={onDelete}
             />
          ))}
-      </div>
+      </div></>
    );
 }

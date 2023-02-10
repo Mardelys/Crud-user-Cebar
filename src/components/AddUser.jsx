@@ -12,8 +12,10 @@ export const AddUser = ({ onAdd }) => {
   };
 
   return (
+   
     <form onSubmit={handleOnSubmit}>
-      <h3>Add User</h3>
+      <h3>Agregar un nuevo usuario</h3>
+      
       <input placeholder="Nombre Completo" name="name" />
       <input placeholder="Usuario" name="username" />
       <input placeholder="Email" name="email" />
@@ -21,5 +23,6 @@ export const AddUser = ({ onAdd }) => {
       <input placeholder="Sitio web" name="website" />
       <button onSubmit={handleOnSubmit}>Add</button>
     </form>
+    
   );
 };
