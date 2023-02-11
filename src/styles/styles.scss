@@ -1,6 +1,6 @@
-$accent:  #0ea500;
+$accent: #0ea500;
 $bg_card: #f0f0f0;
-$letter:#ffffff;
+$letter: #ffffff;
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
@@ -36,32 +36,40 @@ main {
       text-align: center;
    }
 }
-
-form {
+.form-add {
    text-align: center;
-   margin: 2%;
-   background-color: #e6e6e6;
-   padding: 5px;
-   border-radius: 10px;
-   box-shadow: #0520028e 1px 1px 5px ;
+   margin: 2% auto;
+   width: 90%;
 
-   input {
-      margin: 1%;
-      padding: 10px;
-      border-radius: 10px;
-      border: none;
-   
-   
+   h2{
+      font-size: 1.3rem;
+      color: $accent;
    }
-   button{
-      width: 10%;
-      padding: 10px;
-      border: none;
-      background-color: $accent;
-      color: $letter;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
+   form {
+      display: grid;
+      text-align: center;
+      margin: 2%;
+      padding: 5px;
+      margin-bottom: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2%;
+      input {
+         margin: 1%;
+         padding: 10px;
+         border-radius: 10px;
+         border: none;
+         background-color: #e4e4e4;
+      }
+      button {
+         width: 10rem;
+         padding: 10px;
+         border: none;
+         background-color: $accent;
+         color: $letter;
+         font-weight: bold;
+         border-radius: 10px;
+         cursor: pointer;
+      }
    }
 }
 .modal {
@@ -75,16 +83,21 @@ form {
 
    .modal_container {
       margin: auto;
-      width: 50%;
-      height: 300px;
+      width: 60%;
+      height: 350px;
       background-color: #ffffff;
       border-radius: 10px;
    }
-
+   h2{
+      font-size: 1.3rem;
+      color: $accent;
+      text-align: center;
+      margin-top: 3%;
+   }
    form {
       text-align: center;
-      width: 80%;
-      margin: 5% auto;
+      width: 90%;
+      margin: 1% auto;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       list-style: none;
@@ -96,6 +109,7 @@ form {
          width: 90%;
          border-radius: 5px;
          padding: 5px;
+         background-color: #e4e4e4;
       }
       a {
          width: 100%;
@@ -126,7 +140,7 @@ form {
 
    span {
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 2vw, 1.3rem);
       background-color: $accent;
       justify-self: stretch;
       color: $letter;
@@ -158,13 +172,13 @@ form {
          box-sizing: content-box;
          cursor: pointer;
          color: $accent;
-         
-         &:nth-child(2){
+
+         &:nth-child(2) {
             color: rgb(139, 0, 0);
          }
-         
-         &:hover{
-            background-color: $accent ;
+
+         &:hover {
+            background-color: $accent;
             color: $letter;
          }
       }
@@ -179,9 +193,13 @@ form {
 
 //Tablet & Mobile
 @media (max-width: 1000px) {
-   .add {
-      grid: repeat(7, 40px) / 1fr;
+   .container-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      grid-auto-columns: max-content;
    }
+  
    .table {
       display: grid;
       grid-template-columns: repeat(2 1fr);
@@ -191,6 +209,10 @@ form {
    .card {
       background-color: $bg_card;
       grid: repeat(7, min-content 60px) / 1fr;
+      width: 80%;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      box-shadow: #03030377 1px 1px 5px;
       &:not(:first-of-type) span {
          display: inline;
       }
@@ -200,17 +222,49 @@ form {
          grid-row: auto;
       }
       span {
-         background: $accent;
-         color: $letter;
+         background: #e4e4e4;
+         color: $accent;
+         padding: 0;
+
+         &:nth-child(1) {
+            padding: 10px;
+            background-color: $accent;
+            color: $letter;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+         }
       }
    }
 }
 
 //Tablet
-@media (min-width: 480px) and (max-width: 1000px) {
-   .add {
-      grid: repeat(7, 40px) / 1fr;
-      width: 60%;
-      margin: auto;
+@media (min-width: 300px) and (max-width: 700px) {
+   .modal .modal_container {
+      width: 90%;
+      height: 95%;
+      transition: all .50s ease;
+      form {
+         display: flex;
+         flex-direction: column;
+         width: 80%;
+      }
    }
+   .container-card {
+      display: flex;
+      flex-wrap: wrap;
+      transition: all .50s ease;
+   }
+
+   .form-add{
+      width: 90%;
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      transition: all .50s ease;
+      
+    }
+      
+   }
+
 }

@@ -34,6 +34,7 @@ export const User = ({ name, username, email, phone, website, id, onEdit, onDele
 
             <section className="modal">
                <div className="modal_container">
+                  <h2>Editar Usuario</h2>
                   <form onSubmit={handleOnEditSubmit}>
 
                      <li>
@@ -62,14 +63,15 @@ export const User = ({ name, username, email, phone, website, id, onEdit, onDele
                </div>
             </section>
          ) : (
+            
             <div className="card">
-               <span>Nombre Completo</span>
+               <span>Nombre</span>
                <p>{name}</p>
                <span> Usuario</span>
                <p>{username}</p>
-               <span >Correo Electrónico</span>
+               <span >Email</span>
                <p>{email}</p>
-               <span > Número de Teléfono</span>
+               <span >Teléfono</span>
                <p>{phone}</p>
                <span className="user-website">Sitio web</span>
                <p>{website}</p>

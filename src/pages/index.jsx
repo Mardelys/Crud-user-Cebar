@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { User } from "../components/User";
 import { AddUser } from "../components/AddUser";
-import { connect } from "mongoose";
 
 
 
@@ -27,7 +26,7 @@ export default function Home() {
             username: username,
             email: email,
             phone: phone,
-            website:website
+            website: website
          }),
          headers: {
             "Content-type": "application/json; charset=UTF-8"
@@ -46,7 +45,7 @@ export default function Home() {
          .catch((error) => console.log(error));
    };
 
-   const onEdit = async (id,name, email, username, phone, website) => {
+   const onEdit = async (id, name, email, username, phone, website) => {
       await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
          method: "PUT",
          body: JSON.stringify({
@@ -54,7 +53,7 @@ export default function Home() {
             username: username,
             email: email,
             phone: phone,
-            website:website
+            website: website
          }),
          headers: {
             "Content-type": "application/json; charset=UTF-8"
@@ -75,7 +74,7 @@ export default function Home() {
                   user.username = username;
                   user.email = email;
                   user.phone = phone;
-                  user.website= website;
+                  user.website = website;
                }
 
                return user;
@@ -106,25 +105,27 @@ export default function Home() {
 
    return (
       <>
-      <header>
-         <h1>Usuarios Cebar SAS</h1>
-      </header>
-      <div className="App">
-         
-         <AddUser onAdd={onAdd} />
-         {users.map((user) => (
-            <User
-               id={user.id}
-               key={user.id}
-               name={user.name}
-               email={user.email}
-               username={user.username}
-               phone={user.phone}
-               website={user.website}
-               onEdit={onEdit}
-               onDelete={onDelete}
-            />
-         ))}
-      </div></>
+         <header>
+            <h1>Usuarios Cebar SAS</h1>
+         </header>
+         <div className="App">
+
+            <AddUser onAdd={onAdd} />
+            <div className="container-card">
+               {users.map((user) => (
+                  <User
+                     id={user.id}
+                     key={user.id}
+                     name={user.name}
+                     email={user.email}
+                     username={user.username}
+                     phone={user.phone}
+                     website={user.website}
+                     onEdit={onEdit}
+                     onDelete={onDelete}
+                  />
+               ))}
+            </div>
+         </div></>
    );
 }
