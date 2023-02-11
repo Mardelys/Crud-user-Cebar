@@ -22,10 +22,10 @@ Acontinuación dejo el link del despliegue de la aplicación terminada, se hizo 
 - Al cargar la página se observa el formulario y la tabla de usuarios la cual contiene sus botones de editar y eliminar.
 
 
-- Crear usuario: Para crear el usuario llenar los campos del formulario y darle click al botón de agregar y como resultado, al final de la tabla se agregará el nuevo usuario.
+- Crear usuario: Se deben llenar los campos del formulario que se encuentra al principio de la página y darle click al botón de agregar y como resultado, al final de la tabla se agregará el nuevo usuario.
 
 
-- Editar usuario: para poder editar el usuario, en la tabla cada uno de ellos tiene su botón de editar representado por un lapiz, al clickear sobre este muestra un modal con el formulario y los datos de ese usuario, simplemente modifique los datos que hay en los input y para guardarlos se da click al botón con el ícono de finalizado(success).
+- Editar usuario:  en la tabla cada usuario tiene el botón de editar representado por un lapiz, al clickear sobre este muestra un modal con el formulario y los datos de ese usuario, simplemente modifique los datos que hay en los input y para guardarlos se da click al botón con el ícono de finalizado(success).
 
 
 - Eliminar usuario: Cada usuario tiene un botón con un ícono de bote de basura el cual representa la acción de eliminarlo, al clickear sobre este automaticamente se elimina y muestra una alerta de eliminado con éxito.
