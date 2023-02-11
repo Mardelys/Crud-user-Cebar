@@ -1,6 +1,7 @@
 import React from "react";
 
 export const AddUser = ({ onAdd }) => {
+   //accedemos a los input despectivos para agregar los datos a la data
   const handleOnSubmit = (evt) => {
     evt.preventDefault();
     onAdd(evt.target.name.value, evt.target.email.value,  evt.target.username.value,  evt.target.phone.value,evt.target.website.value);
@@ -10,10 +11,11 @@ export const AddUser = ({ onAdd }) => {
     evt.target.phone.value = "";
     evt.target.website.value = "";
   };
-
+//se retorna el formulario
   return (
    <div className="form-add">
    <h2>Agregar nuevo usuario</h2>
+   
     <form classname="add"onSubmit={handleOnSubmit}>
       
       

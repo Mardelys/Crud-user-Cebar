@@ -16,7 +16,7 @@ header {
    top: 0;
    left: 0;
    height: 100px;
-   background-color: $accent;
+   background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,165,0,1) 0%, rgba(10,118,0,1) 90% );
    color: $letter;
    font-weight: bold;
    text-align: center;

@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import Swal from 'sweetalert2'
 import { MdMode, MdOutlineDelete, MdOutlineCheckCircleOutline } from 'react-icons/md'
-
+//se exporta una constante que contiene todos los parametros que se utilizarán de la api
 export const User = ({ name, username, email, phone, website, id, onEdit, onDelete }) => {
-   const [isEdit, setIsEdit] = useState(false);
-
+   const [isEdit, setIsEdit] = useState(false);//utilizaremos un hook para almacenar los cambios de estado.
+//este método permite habilitar la opción de editar y muestra el modal que contiene el formulario para realizar la edición
    const handleEdit = () => {
       setIsEdit(!isEdit);
    };
-
+//se crea una constante la cual será responsable de eliminar el usuario de la base de datos
    const handleDelete = () => {
       onDelete(id);
+      //se retorna una alerta para indicarle al usuario que su operación fue exitosa
       return (
          Swal.fire({
             position: 'center',
@@ -21,7 +22,7 @@ export const User = ({ name, username, email, phone, website, id, onEdit, onDele
          }))
 
    };
-
+//se crea una constante que permite realizar la actualización de un usuario cuando los campos del input ya estan llenos
    const handleOnEditSubmit = (evt) => {
       evt.preventDefault();
       onEdit(id, evt.target.name.value, evt.target.email.value, evt.target.username.value, evt.target.phone.value, evt.target.website.value);
