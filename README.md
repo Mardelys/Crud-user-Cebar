@@ -57,6 +57,8 @@ Para poder clonar este repositorio se deben seguir los siguientes pasos:
  # Planteamiento de estructura de carpetas 
  
  - Se utiliza la estructura de carpetas inicial de el proyecto de Nextjs, se eliminan las innecesarias obteniendo este resultado:
+ 
+ 
 <img src="https://user-images.githubusercontent.com/114613889/218235267-c1569846-7f5c-49af-a1b2-5797e69137b9.png"
  width= "200px"/>
  
